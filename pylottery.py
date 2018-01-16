@@ -13,5 +13,5 @@ tickets = DB.retrieveTickets()
 for draw in draws:
 	if not DB.drawExists(draw.number):
 		checker=TicketChecker(draw,tickets)
-		#DB.recordDraw(draw)
+		DB.recordDraw(draw)
 
