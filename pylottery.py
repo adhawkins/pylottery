@@ -2,20 +2,16 @@
 
 from DrawRetriever import DrawRetriever
 from PyLotteryDB import PyLotteryDB
+from TicketChecker import TicketChecker
 
 retriever = DrawRetriever()
-
 draws = retriever.draws
 
-#for draw in draws:
-#	print(draw)
-
 DB = PyLotteryDB()
-
-#for draw in draws:
-#	if not DB.drawExists(draw.number):
-#		DB.recordDraw(draw)
-
 tickets = DB.retrieveTickets()
-for ticket in tickets:
-	print(ticket)
+
+for draw in draws:
+	if not DB.drawExists(draw.number):
+		checker=TicketChecker(draw,tickets)
+		#DB.recordDraw(draw)
+
