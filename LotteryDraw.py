@@ -14,4 +14,4 @@ class LotteryDraw:
 		self.bonus = bonus
 
 	def __str__(self):
-		return "Num: " + self.number + ", date: " + self.date.isoformat() + ", balls: '" + " ".join(self.balls) + "', bonus: " + self.bonus
+		return "Num: " + self.number + ", date: " + self.date.isoformat() + ", balls: '" + " ".join(map(str,self.balls)) + "', bonus: " + str(self.bonus)

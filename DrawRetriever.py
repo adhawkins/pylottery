@@ -15,8 +15,8 @@ class DrawRetriever:
 		for CSVRow in CSVResults:
 			draw=LotteryDraw(CSVRow['DrawNumber'],
 					datetime.strptime(CSVRow['DrawDate'], '%d-%b-%Y').date(),
-					sorted([ CSVRow['Ball 1'], CSVRow['Ball 2'], CSVRow['Ball 3'], CSVRow['Ball 4'], CSVRow['Ball 5'], CSVRow['Ball 6'] ], key=int),
-					CSVRow['Bonus Ball'],
+					sorted([ int(CSVRow['Ball 1']), int(CSVRow['Ball 2']), int(CSVRow['Ball 3']), int(CSVRow['Ball 4']), int(CSVRow['Ball 5']), int(CSVRow['Ball 6']) ]),
+					int(CSVRow['Bonus Ball']),
 				)
 
 			self.draws.append(draw)
