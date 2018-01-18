@@ -1,10 +1,11 @@
 import sqlite3
 from LotteryDraw import LotteryDraw
 from LotteryTicket import LotteryTicket
+import os.path
 
 class PyLotteryDB:
 	def __init__(self):
-		self.conn = sqlite3.connect('pylottery.sqlite')
+		self.conn = sqlite3.connect(os.path.join(os.path.dirname(os.path.realpath(__file__)),'pylottery.sqlite'))
 		self.conn.row_factory = sqlite3.Row
 		self.checkTables()
 
